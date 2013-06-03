@@ -1,4 +1,84 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,800italic,400,800,700,600,300);
 @import "style-global.less";
 
-body{ }
 
+
+//Colors
+@white: white;
+@black: black;
+@salmon: #f9604c;
+@grey: #8b8b8b;
+@backgroundColor: #0c0c0c;
+
+//Fonts
+.opensans{ font-family:'Open Sans', Helvetica, Arial, sans-serif; }
+
+
+body{ background:@backgroundColor; color:@grey; .opensans;  }
+
+
+
+.container{ padding:0 20px; }
+
+
+
+
+article{
+	h1, h2, h3, h4, h5, h6{ color:white; margin:0; }
+
+	h2{ .fs(36px); }
+	h3{ .fs(30px); }
+	h4{ .fs(28px, 42px); font-weight:300; }
+
+	p, li{ .fs(16px, 34px); }
+
+	strong{ color:@white; }
+
+	img{ margin-bottom:20px;}
+}
+
+.speakers{ background:@white; 
+	.speaker{ width:40%; margin-right:10%; .overflow; .fl; }
+		h3{ color:@black; }
+		img{ max-width:165px; margin-right:30px; .fl; }
+	
+}
+
+.about{ padding:50px 0 40px; background:url("../images/oslo.jpg") no-repeat center center; .bg-size(cover); .tcenter; .upcase;
+	h3{}
+	
+	.block{ margin-bottom:20px; }
+	.button{ display:inline-block; margin:10px; padding:10px 20px; background:@salmon; color:@white; .br(4px); .anchor; .upcase; font-weight:700; .opensans;
+		&:hover{ background:lighten(@salmon,4%); text-decoration:none; }
+		&:active{ text-decoration:none; }
+	}
+}
+
+.mastery{
+	> header{ margin:0 0 60px; padding:60px 0; background:@salmon; .tcenter; }
+	section{ margin-top:70px;}
+		h3{ margin-bottom:40px;}
+		h4{ margin-bottom:30px; color:@salmon; }
+}
+
+
+
+
+// Media Queries and overrides ========================================================
+
+/* Large desktop */
+@media (min-width: 1200px){
+}
+ 
+/* Portrait tablet to landscape and desktop */
+@media (min-width: 768px) and (max-width: 979px){
+}
+ 
+/* Landscape phone to portrait tablet */
+@media (max-width: 767px){
+	body{ padding:0; }
+}
+ 
+/* Landscape phones and down */
+@media (max-width: 480px){
+}
