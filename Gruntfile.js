@@ -167,6 +167,18 @@ module.exports = function (grunt) {
                 }]
             }
         },
+        'ftp-deploy': {
+          build: {
+            auth: {
+              host: 's215831426.mialojamiento.es',
+              port: 21,
+              authKey: 'bernatfortet'
+            },
+            src: 'dist',
+            dest: '/stubs.bernatfortet.com/morten-hake'
+            //exclusions: ['dist/images', 'dist/styles/fonts']
+          }
+        }
     });
 
     grunt.renameTask('regarde', 'watch');
@@ -192,6 +204,7 @@ module.exports = function (grunt) {
         'less:dist',
         'jade:dist',
         'copy',
+        'ftp-deploy'
     ]);
 
     grunt.registerTask('default', ['livereload-start', 'connect', 'watch']);

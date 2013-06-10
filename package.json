@@ -14,7 +14,8 @@
 		"grunt-contrib-jade": "~0.5.1",
 		"grunt-regarde": "~0.1.1",
 		"grunt-open": "~0.2.0",
-		"matchdep": "~0.1.2"
+		"matchdep": "~0.1.2",
+		"grunt-ftp-deploy": "0.0.9"
 	},
 	"engines": {
 		"node": ">=0.8.0"
