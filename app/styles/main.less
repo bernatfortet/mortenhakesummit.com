@@ -7,78 +7,93 @@
 //Colors
 @white: white;
 @black: black;
-@salmon: #f9604c;
+@red: #d3321d;
 @grey: #8b8b8b;
-@backgroundColor: #0c0c0c;
+@backgroundColor: #fff;
 
 //Fonts
 .opensans{ font-family:'Open Sans', Helvetica, Arial, sans-serif; }
 .noto{ font-family:'Noto', Georgia, serif; }
 
 
-.button{ display:inline-block; padding:18px 30px; background:@salmon; color:white; .fs(22px); font-weight:800; .br(3px); .upcase; .anchor;
+.button{ display:inline-block; padding:18px 30px; background:@red; color:white; .fs(22px); font-weight:800; .br(3px); .upcase; .anchor;
 	span{ .fl; margin-right:10px; }
 	.lightning{ width:20px; height:20px; .fl; background:url("../images/lightning.png") no-repeat center center; }
-	&:hover{ background:lighten(@salmon,4%); color:@white; text-decoration:none; }
+	&:hover{ background:lighten(@red,4%); color:@white; text-decoration:none; }
 	&:active{ text-decoration:none; }
 }
 
 
-body{ background:@backgroundColor; color:@grey; .opensans;  }
-
+body{ background:@backgroundColor; color:lighten(black, 20%); .opensans;  }
+p, li{ .fs(16px, 34px); }
 
 
 .container{ padding:0 20px; }
 
-body > header{ width:100%; height:460px;.rel; background:#090003;
+body > header{ width:100%; .rel; background:@backgroundColor;
 
-	iframe{ .rel; top:30px; }
+	.logo{ width:147px; height:110px; margin:10px auto 0; background:url("../images/logo.png") no-repeat center center; .ir; }
+
+	h5{ font-size:16px; margin:40px 0; }
+	h2{ width:600px; margin:0 auto; font-size:22px; line-height:32px; color:@red; text-align:center; }
+
+	iframe{ width:600px; margin:40px auto 0; display:block; overflow:hidden; }
+
+	h3{ width:700px; margin:40px auto; font-size:20px; line-height:32px; color:@black; text-align:center; }
+
 
 	nav{ width:100%; .abs; bottom:0; background:fade(black,80%); .overflow;
 		ul{ margin:0; .overflow; }
-			li{ .block; .fl; margin-right:30px; padding:30px 20px; .fs(20px); color:@white; .upcase; list-style:none;
+			li{ .block; .fl; margin-right:30px; padding:30px 20px; .fs(20px); color:@black; .upcase; list-style:none;
 				a{ color:white;
-					&:hover{ color:@salmon; text-decoration:none;}
+					&:hover{ color:@red; text-decoration:none;}
 				}
 			}
 	}
-
-	.info{ width:300px; .rel; left:-80px; .fr;
-		.logo{ width:147px; height:110px; margin:10px auto 0; background:url("../images/logo.png") no-repeat center center; .ir; }
-		p{ margin-bottom:30px; .fs(20px, 30px); .tcenter; color:@white; }
-		.dates{ margin-bottom:10px; .fs(20px); font-weight:800; .upcase; color:@white;
-			sup{ .fs(11px); font-weight:300; }
-			span{ font-weight:300; }
-		}
-	}
 }
 
-
-
-
 article{ padding:30px 0;
-	h1, h2, h3, h4, h5, h6{ color:@white; margin:0; }
+	h1, h2, h3, h4, h5, h6{ color:@black; margin:0; }
 
 	h2{ .fs(36px, 44px); }
 	h3{ .fs(30px); }
 	h4{ .fs(28px, 42px); font-weight:300; }
 
-	p, li{ .fs(16px, 34px); }
+
 
 	ul{ margin:0; }
 	li{ margin-bottom:10px; padding-left:30px; background:url("../images/lightning.png") no-repeat left 5px; list-style:none; }
 
-	strong{ color:@white; }
+	strong{ color:@black; }
 
 	img{ margin-bottom:20px;}
 
 	iframe{ width:100%; margin-bottom:20px; }
 }
 
+
+.mastery{ margin-top:50px; padding-top:0;
+	> header{ padding:60px 0; background:@red; .tcenter; }
+	section{ margin-top:50px;}
+		h3{ margin-bottom:20px;}
+		h4{ margin-bottom:30px; color:@red; font-style:italic; }
+}
+
+
+.speakers{
+	h2{ margin:40px 0 50px; color:@black; .upcase; .tcenter;}
+	.speaker{ margin-bottom:60px; }
+		h3{ color:@black; }
+		.quote{ margin-bottom:10px; font-style:italic; font-weight:normal; }
+		img{ .fl; }
+}
+
+
+
 @borderColor: darken(white,80%) ;
 
 blockquote{ max-width:680px; margin:40px auto; padding:40px 0; border:0; @border:1px solid @borderColor; border-top:@border; border-bottom:@border; .tcenter;
-	.quote{ margin-bottom:10px; .fs(24px); .noto; font-style:italic; font-weight:400; color:@white; }
+	.quote{ margin-bottom:10px; .fs(24px); .noto; font-style:italic; font-weight:400; color:@black; }
 	.author{ .upcase; letter-spacing:0.3em;
 		&:before{ content: ' —'; .rel; left:-10px;}
 		&:after{ content: '— '; .rel; left:10px;}
@@ -87,7 +102,7 @@ blockquote{ max-width:680px; margin:40px auto; padding:40px 0; border:0; @border
 }
 
 .intro{
-	h5{ margin-top:30px; margin-bottom:60px; .fs(24px, 32px); color:white; font-weight:700; .tcenter;  }
+	h5{ margin-top:30px; margin-bottom:60px; .fs(24px, 32px); color:#black; font-weight:700; .tcenter;  }
 }
 
 .intro2{
@@ -96,28 +111,19 @@ blockquote{ max-width:680px; margin:40px auto; padding:40px 0; border:0; @border
 	}
 }
 
-.speakers{ background:@white; 
-	h2{ margin:40px 0 50px; color:@black; .upcase; .tcenter;}
-	.speaker{ margin-bottom:60px; }
-		h3{ color:@black; .tcenter; }
-		img{ .fl;  .br(50%); }
-	
-}
-
-
 .details{
 	header{ .tcenter; margin-bottom:30px; }
 
 	.table{ .fs(16px, 24px);
 		.table-row{ padding:0 20px; background:#252525; margin-bottom:1px; .overflow;
 			.text{ width:80%; padding:15px 0; .fl; border-right:1px solid @backgroundColor; }
-			.value{ width:16%; padding:15px 0; .fl; color:@white; text-align:right; }
+			.value{ width:16%; padding:15px 0; .fl; color:@black; text-align:right; }
 		}
 
 	}
 
 	.tickets{
-		.text{ .fs(40px); .rel; left:30px; top:30px; color:@white; font-weight:600; }
+		.text{ .fs(40px); .rel; left:30px; top:30px; color:@black; font-weight:600; }
 		.button{ display:block; .rel; margin:20px auto; padding:15px 0; .tcenter;
 			.subtitle{ margin-bottom:8px; }
 			.title{ .rel; left:-5px; .fs(40px); font-weight:800; }
@@ -144,12 +150,6 @@ blockquote{ max-width:680px; margin:40px auto; padding:40px 0; border:0; @border
 	.block{ margin-bottom:20px; }
 }
 
-.mastery{ padding-top:0;
-	> header{ padding:60px 0; background:@salmon; .tcenter; }
-	section{ margin-top:70px;}
-		h3{ margin-bottom:20px;}
-		h4{ margin-bottom:30px; color:@salmon; font-style:italic; }
-}
 
 .faq{
 	h2{ margin-bottom:30px; }
@@ -157,7 +157,7 @@ blockquote{ max-width:680px; margin:40px auto; padding:40px 0; border:0; @border
 }
 
 .banner{ margin:40px 0; background:@white; color:@black;
-	h3{ margin:0; padding:20px 0; background:@salmon; color:@white; .tcenter; }
+	h3{ margin:0; padding:20px 0; background:@red; color:@white; .tcenter; }
 
 	.container{ padding:30px; }
 	.desc{ margin-bottom:10px; .fs(19px, 28px); font-weight:600; }
